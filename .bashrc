@@ -1,26 +1,24 @@
 # i was experimenting with Docker images and replacing them with instead of using VMs and I created this file so that I can have a consistent .bashrc with the correct PATH in place
 
-# ~/.bashrc for ax0ryn (Docker CTF image)
+# ~/.bashrc for Docker container
 
 # ====== PATH ======
-# Start with system PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
-# Append ~/.local/bin after system PATH
 export PATH="$PATH:$HOME/.local/bin"
 
 # ====== Aliases ======
 alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
-alias grep='grep --color=auto'
-
-# Replace ls with exa if installed
-if command -v exa &> /dev/null; then
-    alias ls='exa --group-directories-first --icons'
-fi
 
 # ====== Prompt ======
-PS1='[\u@\h \W]\$ '
+# Colored like typical Linux distros
+if [ "$TERM" != "dumb" ]; then
+    # Green user@host, blue directory, $ at the end
+    PS1='\[\e[0;32m\]\u@\h \[\e[0;34m\]\w\[\e[0m\]\$ '
+fi
 
-# ====== Git ======
-git config --global core.editor "nano"
+# ====== Misc ======
+HISTCONTROL=ignoredups:erasedups
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s histappend
