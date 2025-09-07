@@ -9,6 +9,7 @@ export PATH="$PATH:$HOME/.local/bin"
 alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
+alias ls='ls --color=auto'
 
 # ====== Prompt ======
 # Colored like typical Linux distros
