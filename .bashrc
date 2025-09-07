@@ -24,9 +24,3 @@ PS1='[\u@\h \W]\$ '
 
 # ====== Git ======
 git config --global core.editor "nano"
-
-# ====== tmux auto-start ======
-# Automatically start tmux if not already inside
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
