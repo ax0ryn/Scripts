@@ -15,7 +15,7 @@ alias ls='ls --color=auto'
 # Colored like typical Linux distros
 if [ "$TERM" != "dumb" ]; then
     # Green user@host, blue directory, $ at the end
-    PS1='\[\e[0;32m\]\u@\h \[\e[0;34m\]\w\[\e[0m\]\$ '
+    PS1='\[\e[0;32m\]\u@\h\[\e[0;34m\]\w\[\e[0m\]\$ '
 fi
 
 # ====== Misc ======
